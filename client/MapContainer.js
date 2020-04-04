@@ -23,16 +23,9 @@ class MapContainer extends Component{
   }
 
   render(){
-    console.log('MapContainer this.state', this.state)
-    console.log('MapContainer this.props', this.props)
-
     let markers = [];
 
-    // console.log('displayMarkers data', this.props.markerData)
-
     for (let i =0; i < this.state.markers.length; i += 1) {
-
-      // console.log('latitude',this.state.markers[i].AddressInfo.Longitude)
       markers.push(<Marker key={i} id={i} position={{
         lat: this.state.markers[i].AddressInfo.Latitude,
         lng: this.state.markers[i].AddressInfo.Longitude
@@ -45,7 +38,7 @@ class MapContainer extends Component{
             <Map
             google={this.props.google}
             style={mapStyles}
-            zoom={8}
+            zoom={15}
             initialCenter={{ lat: 52.5200, lng: 13.4050}}>
             {markers}
          </Map>
@@ -61,5 +54,5 @@ const mapStyles = {
 
 
  export default GoogleApiWrapper({
-  apiKey: 'AIzaSyB-zaRqQNjKX8lPyD1cMPI-7LyLvlESJIQ'
+  apiKey: ''
 })(MapContainer);
