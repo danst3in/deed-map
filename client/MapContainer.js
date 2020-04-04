@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+
 /**
  * @description This component adds the charging location data to state from the Open
  * Charge Map API endpoint. It then iterates through said data in render, collecting the 
@@ -43,7 +44,7 @@ class MapContainer extends Component{
             <Map
             google={this.props.google}
             style={mapStyles}
-            zoom={15}
+            zoom={14}
             initialCenter={{ lat: 52.5200, lng: 13.4050}}>
             {markers}
          </Map>
@@ -55,8 +56,6 @@ class MapContainer extends Component{
 const mapStyles = {
    width: '80%',
  };
-
-
 
  export default GoogleApiWrapper({
   apiKey: ''
