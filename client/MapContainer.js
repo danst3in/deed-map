@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+/**
+ * @description This component adds the charging location data to state from the Open
+ * Charge Map API endpoint. It then iterates through said data in render, collecting the 
+ * latitudes and longitudes, and adding Marker items to the Google Map
+ */
 
 class MapContainer extends Component{
 
